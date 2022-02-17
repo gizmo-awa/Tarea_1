@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val userInput: EditText = findViewById<EditText>(R.id.editText)
         val button: Button = findViewById<Button>(R.id.button)
+        val btnClear: Button = findViewById<Button>(R.id.button_clear)
         textView = findViewById<EditText>(R.id.textView)
 
         textView?.movementMethod = ScrollingMovementMethod()
@@ -34,6 +35,15 @@ class MainActivity : AppCompatActivity() {
                 //userInput.setText("")
                 userInput.text.clear()
             }
+        })
+
+        btnClear.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?){
+                Log.d(TAG, "onClick")
+                textView?.setText(null)
+            }
+
+
         })
     }
     override fun onStart() {
